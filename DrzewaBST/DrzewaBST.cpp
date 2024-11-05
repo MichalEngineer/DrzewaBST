@@ -1,20 +1,71 @@
-﻿// DrzewaBST.cpp : Ten plik zawiera funkcję „main”. W nim rozpoczyna się i kończy wykonywanie programu.
-//
+﻿#include "BST.h"
 
-#include <iostream>
+BST::BST() : root(nullptr) {}
 
-int main()
-{
-    std::cout << "Hello World!\n";
+BST::~BST() {
+
 }
 
-// Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
-// Debugowanie programu: F5 lub menu Debugowanie > Rozpocznij debugowanie
+void BST::addNode(Node*& node, int value) {
 
-// Porady dotyczące rozpoczynania pracy:
-//   1. Użyj okna Eksploratora rozwiązań, aby dodać pliki i zarządzać nimi
-//   2. Użyj okna programu Team Explorer, aby nawiązać połączenie z kontrolą źródła
-//   3. Użyj okna Dane wyjściowe, aby sprawdzić dane wyjściowe kompilacji i inne komunikaty
-//   4. Użyj okna Lista błędów, aby zobaczyć błędy
-//   5. Wybierz pozycję Projekt > Dodaj nowy element, aby utworzyć nowe pliki kodu, lub wybierz pozycję Projekt > Dodaj istniejący element, aby dodać istniejące pliku kodu do projektu
-//   6. Aby w przyszłości ponownie otworzyć ten projekt, przejdź do pozycji Plik > Otwórz > Projekt i wybierz plik sln
+}
+
+void BST::add(int value) {
+    
+}
+
+BST::Node* BST::deleteNode(Node* node, int value) {
+  
+}
+
+void BST::remove(int value) {
+
+}
+
+void BST::deleteTree(Node* node) {
+
+    
+}
+
+void BST::clear() {
+
+}
+
+bool BST::findPath() {
+
+}
+
+bool BST::searchPath() {
+
+}
+
+void BST::inorder(Node* node) {
+
+}
+
+void BST::displayInorder() {
+    
+}
+
+void BST::preorder(Node* node) {
+    
+}
+
+void BST::displayPreorder() {
+    
+}
+
+void BST::postorder(Node* node) {
+    
+}
+
+void BST::displayPostorder() {
+    
+}
+
+void BST::saveToFile() {
+    
+}
+
+void BST::saveInOrder() {
+}
