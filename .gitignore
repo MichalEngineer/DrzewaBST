@@ -1,4 +1,4 @@
-vs/
+DrzewaBST/.vs/*
 DrzewaBST/DrzewaBST.vcxproj
 DrzewaBST/DrzewaBST.vcxproj.*
 DrzewaBST/*.opendb

@@ -15,5 +15,5 @@ void displayMenu() {
 }
 
 int main() {
-
+    //By³a by³a by³a moim idea³em dok³adnie naprawde by³a ziomuœ
 }
