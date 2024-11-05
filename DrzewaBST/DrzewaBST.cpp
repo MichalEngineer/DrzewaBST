@@ -7,11 +7,15 @@ BST::~BST() {
 }
 
 void BST::addNode(Node*& node, int value) {
+     if (!node) { node = new Node(value); }
+     else if (value < node->data) { addNode(node->left, value); }
+     else { addNode(node->right, value); }
+ }
 
-}
 
 void BST::add(int value) {
-    
+        addNode(root, value);
+
 }
 
 BST::Node* BST::deleteNode(Node* node, int value) {
