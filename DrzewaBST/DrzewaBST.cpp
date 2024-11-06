@@ -82,20 +82,30 @@ void BST::displayInorder() {
     std::cout << std::endl;
 }
 
-void BST::preorder(Node* node) {
-    
+void BST::preorder(Node* node) { //tu
+    if (node) {
+        std::cout << node->data << " ";
+        preorder(node->left);
+        preorder(node->right);
+    }
 }
 
-void BST::displayPreorder() {
-    
+void BST::displayPreorder() { //tu
+    preorder(root);
+    std::cout << std::endl;
 }
 
-void BST::postorder(Node* node) {
-    
+void BST::postorder(Node* node) { //tu
+    if (node) {
+        postorder(node->left);
+        postorder(node->right);
+        std::cout << node->data << " ";
+    }
 }
 
-void BST::displayPostorder() {
-    
+void BST::displayPostorder() { //tu
+    postorder(root);
+    std::cout << std::endl;
 }
 
 void BST::saveToFile() {
