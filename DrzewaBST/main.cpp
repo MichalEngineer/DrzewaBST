@@ -34,11 +34,11 @@ int main() {
     switch (option) {
     case 1:
         do {
-            std::cout << "Podaj wartosc nowego elementu drzewa BST: "; // dodawanie elementu
+            std::cin >> value; 
             std::cin >> value;
 
             tree.addNode(value);
-
+            tree.add(value);
             std::cout << "Czy dodac nastepny element ? (t/n): ";
             std::cin >> choice;
 
@@ -58,7 +58,7 @@ int main() {
         break;
 
     case 4:
-        tree.displayPostorders();
+        tree.displayInorder();
         std::cout << std::endl;
         break;
 
