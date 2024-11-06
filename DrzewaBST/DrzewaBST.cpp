@@ -73,7 +73,8 @@ void BST::postorder(Node* node) { //tu
 }
 
 void BST::displayPostorder() { //tu
-    
+    postorder(root);
+    std::cout << std::endl;
 }
 
 void BST::saveToFile() {
