@@ -22,4 +22,5 @@ int main() {
     bst.add(2);
     bst.add(3);
     bst.displayInorder();
+    bst.saveToFile();
 }
