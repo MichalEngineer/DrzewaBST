@@ -3,7 +3,7 @@
 BST::BST() : root(nullptr) {}
 
 BST::~BST() {
-
+    this->clear();
 }
 
 void BST::addNode(Node*& node, int value) {

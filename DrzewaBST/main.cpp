@@ -24,4 +24,6 @@ int main() {
     bst.displayInorder();
     bst.saveToFile();
     bst.searchPath(3);
+    bst.clear();
+    bst.displayInorder();
 }
