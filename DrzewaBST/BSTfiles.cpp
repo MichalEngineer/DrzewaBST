@@ -1,55 +1,51 @@
 #include "BSTfiles.h"
+#include<fstream>
 
 void Files::Load_from_text_file(BST& tree, const std::string& filename, bool clearTree) {
 
-    int v;  
+    int value;
 
-    std::ifstream file(filename);  
+    std::ifstream file(filename);
 
-    if (!file) {  
+    if (!file) {
 
         std::cerr << "Nie mozna otworzyc pliku tekstowego: " << filename << std::endl;
         return;
 
     }
 
-    while (file >> v) {   
+    while (file >> value) {
 
-        tree.BST_dodanie_elementu(v);  
+        tree.add(value);
 
     }
 
-    file.close(); 
+    file.close();
 
 }
 
-void Files::Save_to_text_file(std::ofstream& file, Node* node) {
-
-    if (node == nullptr) { 
-
+void Files::Save_to_text_file(std::ofstream& file, BST::Node* node) {
+    if (node == nullptr) {
         return;
-
     }
 
-    file.write(reinterpret_cast<char*>(&node->data), sizeof(node->data)); 
-
-    Pliki_Zapisanie_wezla(file, node->left);   
-    Pliki_Zapisanie_wezla(file, node->right);
-
+    file << node->data << " "; 
+    Save_to_text_file(file, node->left);
+    Save_to_text_file(file, node->right);
 }
 
 void Files::Save_to_binary_file(BST& tree, const std::string& filename) {
 
-    std::ofstream file(filename, std::ios::binary);   
+    std::ofstream file(filename, std::ios::binary);
 
-    if (!file) {        
+    if (!file) {
 
         std::cerr << "Nie mo¿na otworzyæ pliku do zapisu: " << filename << std::endl;
         return;
 
     }
 
-    Pliki_Zapisanie_wezla(file, tree.root); 
+    Save_to_text_file(file, tree.root);
 
     file.close();
 
@@ -57,21 +53,17 @@ void Files::Save_to_binary_file(BST& tree, const std::string& filename) {
 
 void Files::Load_from_binary_file(BST& tree, const std::string& filename) {
 
-    std::ifstream file(filename, std::ios::binary);                
+    std::ifstream file(filename, std::ios::binary);
 
-    if (!file) {                                       
-
+    if (!file) {
         std::cerr << "Nie mo¿na otworzyæ pliku do wczytania: " << filename << std::endl;
         return;
-
     }
 
-    int v;  
+    int value;
 
-    while (file.read(reinterpret_cast<char*>(&v), sizeof(v))) {   
-
-        tree.BST_dodanie_elementu(v);   
-
+    while (file.read(reinterpret_cast<char*>(&value), sizeof(value))) {
+        tree.add(value);
     }
 
     file.close();

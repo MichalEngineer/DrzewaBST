@@ -1,5 +1,6 @@
 #include <iostream>
 #include "BST.h"
+#include "BSTfiles.h"
 
 void displayMenu() {
     std::cout << "\nBST Menu:\n";
