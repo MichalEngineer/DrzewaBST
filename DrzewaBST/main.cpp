@@ -27,4 +27,15 @@ int main() {
     bst.searchPath(3);
     bst.clear();
     bst.displayInorder();
+
+    BST tree;
+    Files files;
+
+ 
+    files.Load_from_text_file(tree, "test.txt", true);
+
+    
+    tree.displayInorder(); 
+
+    return 0;
 }
