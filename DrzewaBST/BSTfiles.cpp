@@ -54,3 +54,26 @@ void Files::Save_to_binary_file(BST& tree, const std::string& filename) {
     file.close();
 
 }
+
+void Files::Load_from_binary_file(BST& tree, const std::string& filename) {
+
+    std::ifstream file(filename, std::ios::binary);                
+
+    if (!file) {                                       
+
+        std::cerr << "Nie mo¿na otworzyæ pliku do wczytania: " << filename << std::endl;
+        return;
+
+    }
+
+    int v;  
+
+    while (file.read(reinterpret_cast<char*>(&v), sizeof(v))) {   
+
+        tree.BST_dodanie_elementu(v);   
+
+    }
+
+    file.close();
+
+}
