@@ -58,7 +58,7 @@ int main() {
         break;
 
     case 4:
-        tree.displayInorder();
+        tree.displayPostorders();
         std::cout << std::endl;
         break;
 
