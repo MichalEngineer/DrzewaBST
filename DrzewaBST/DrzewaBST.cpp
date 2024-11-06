@@ -99,8 +99,21 @@ void BST::displayPostorder() {
 }
 
 void BST::saveToFile() {
-    
+    std::ofstream outFile("plik.txt");
+    if (outFile.is_open()) {
+        saveInOrder(root, outFile);
+        outFile.close();
+        std::cout << "Drzewo zapisane w plik.txt" << std::endl;
+    }
+    else {
+        std::cerr << "Brak mozliwosci otwarcia pliku." << std::endl;
+    }
 }
 
-void BST::saveInOrder() {
+void BST::saveInOrder(Node* node, std::ofstream& outFile) {
+    if (node) {
+        saveInOrder(node->left, outFile);
+        outFile << node->data << " ";
+        saveInOrder(node->right, outFile);
+    }
 }

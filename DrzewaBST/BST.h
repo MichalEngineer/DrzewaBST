@@ -19,7 +19,7 @@ private:
     void preorder(Node* node);
     void postorder(Node* node);
     bool findPath();
-    void saveInOrder();
+    void saveInOrder(Node* node, std::ofstream& outFile);
 
 public:
     BST();
