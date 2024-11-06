@@ -37,7 +37,7 @@ int main() {
             std::cout << "Podaj wartosc nowego elementu drzewa BST: ";
             std::cin >> value;
 
-            tree.add(value);
+            tree.addNode(value);
 
             std::cout << "Czy dodac nastepny element ? (t/n): ";
             std::cin >> choice;
