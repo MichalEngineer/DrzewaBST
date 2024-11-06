@@ -61,12 +61,22 @@ void BST::clear() {
     root = nullptr;
 }
 
-bool BST::findPath() {
-    return 1;
+void BST::findPath(Node* node, int value, std::string path = ""){
+    if (!node) {
+        std::cout << "Brak elementu w drzewie." << std::endl;
+        return;
+    }
+    path += std::to_string(node->data) + " ";
+    if (node->data == value) {
+        std::cout << "Sciezka do " << value << " : " << path << std::endl;
+        return;
+    }
+    if (value < node->data) { findPath(node->left, value, path); }
+    else { findPath(node->right, value, path); }
 }
 
-bool BST::searchPath() {
-    return 1;
+void BST::searchPath(int value) {
+    findPath(root, value);
 }
 
 void BST::inorder(Node* node) {
@@ -82,7 +92,7 @@ void BST::displayInorder() {
     std::cout << std::endl;
 }
 
-void BST::preorder(Node* node) { //tu
+void BST::preorder(Node* node) { 
     if (node) {
         std::cout << node->data << " ";
         preorder(node->left);
@@ -90,12 +100,12 @@ void BST::preorder(Node* node) { //tu
     }
 }
 
-void BST::displayPreorder() { //tu
+void BST::displayPreorder() { 
     preorder(root);
     std::cout << std::endl;
 }
 
-void BST::postorder(Node* node) { //tu
+void BST::postorder(Node* node) { 
     if (node) {
         postorder(node->left);
         postorder(node->right);
@@ -103,7 +113,7 @@ void BST::postorder(Node* node) { //tu
     }
 }
 
-void BST::displayPostorder() { //tu
+void BST::displayPostorder() { 
     postorder(root);
     std::cout << std::endl;
 }

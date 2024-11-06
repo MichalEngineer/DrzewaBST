@@ -23,4 +23,5 @@ int main() {
     bst.add(3);
     bst.displayInorder();
     bst.saveToFile();
+    bst.searchPath(3);
 }

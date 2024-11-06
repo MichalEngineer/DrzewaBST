@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <fstream>
+#include <string>
 
 class BST {
 private:
@@ -18,7 +19,7 @@ private:
     void inorder(Node* node);
     void preorder(Node* node);
     void postorder(Node* node);
-    bool findPath();
+    void findPath(Node* node, int value, std::string path);
     void saveInOrder(Node* node, std::ofstream& outFile);
 
 public:
@@ -27,7 +28,7 @@ public:
     void add(int value);
     void remove(int value);
     void clear();
-    bool searchPath();
+    void searchPath(int value);
     void displayInorder();
     void displayPreorder();
     void displayPostorder();
