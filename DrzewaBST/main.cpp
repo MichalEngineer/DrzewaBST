@@ -6,36 +6,114 @@ void displayMenu() {
     std::cout << "\nBST Menu:\n";
     std::cout << "1. Dodaj element\n";
     std::cout << "2. Usuñ element\n";
-    std::cout << "3. Usuñ ca³e drzewo\n";
-    std::cout << "4. Szukaj drogi do elementu\n";
-    std::cout << "5. Wyœwietl drzewo (1. Inorder, 2. Preorder, 3. Postorder)\n";
-    std::cout << "6. Zapisz drzewo do pliku\n";
-    std::cout << "7. Wczytaj drzewo z pliku binarnego\n";
-    std::cout << "8. Wczytaj drzewo z pliku tekstowego\n";
-    std::cout << "0. WyjdŸ\n";
+    std::cout << "3. Wyœwietl drzewo preorder\n";
+    std::cout << "4. Wyœwietl drzewo inorder\n";
+    std::cout << "5. Wyœwietl drzewo postorder\n";
+    std::cout << "6. Szukaj drogi do elementu\n";
+    std::cout << "7. Usuñ ca³e drzewo\n";
+    std::cout << "8. Zapisz drzewo do pliku\n";
+    std::cout << "9. Wczytaj drzewo z pliku tekstowego\n";
+    std::cout << "10. Zapisz drzewo z pliku binarnego\n";
+    std::cout << "11. Wczytaj drzewo z pliku binarnego\n";
+    std::cout << "12. WyjdŸ\n";
 }
 
 int main() {
-    //By³a by³a by³a moim idea³em dok³adnie naprawde by³a ziomuœ naprawde bez kapki rel
-    BST bst;
-    bst.add(5);
-    bst.add(9);
-    bst.add(2);
-    bst.add(3);
-    bst.displayInorder();
-    bst.saveToFile();
-    bst.searchPath(3);
-    bst.clear();
-    bst.displayInorder();
-
+  
+    char choice = 'n';
+    int option;
+    int value;
     BST tree;
-    Files files;
 
- 
-    files.Load_from_text_file(tree, "test.txt", true);
+    Files file;
 
-    
-    tree.displayInorder(); 
+    do {
+        displayMenu(); 
+        std::cin >> option;
 
-    return 0;
+    switch (option) {
+    case 1:
+        do {
+            std::cout << "Podaj wartosc nowego elementu drzewa BST: ";
+            std::cin >> value;
+
+            tree.add(value);
+
+            std::cout << "Czy dodac nastepny element ? (t/n): ";
+            std::cin >> choice;
+
+        } while (choice == 't' || choice == 'T');
+        break;
+    case 2:
+
+        std::cout << "Podaj wartosc elementu drzewa BST, ktora chcesz usunac: ";
+        std::cin >> value;
+
+        tree.remove(value);
+
+        break;
+    case 3:
+        tree.displayPreorder();
+        std::cout << std::endl;
+        break;
+
+    case 4:
+        tree.displayInorder();
+        std::cout << std::endl;
+        break;
+
+    case 5:
+        tree.displayPostorder();
+        std::cout << std::endl;
+        break;
+    case 6:
+        do {
+            std::cout << "Podaj wartosc elementu drzewa BST, ktora chcesz znalezc: ";
+            std::cin >> value;
+
+            tree.searchPath(value);
+
+            std::cout << "Czy chcesz znalezc inny element ? (t/n): ";
+            std::cin >> choice;
+
+        } while (choice == 't' || choice == 'T');
+        break;
+    case 7:
+        tree.clear();
+        std::cout << "Cale drzewo zostalo usuniete" << std::endl;
+        break;
+
+    case 8:
+        tree.saveToFile();
+        std::cout << "Drzewo zapisano do plik.txt" << std::endl;
+        break;
+
+    case 9:
+    {
+        std::string filename = "Wczytanie z pliku tekstowego";
+        file.Load_from_text_file(tree, filename, true);
+    }
+    break;
+
+
+    case 10:
+    {
+        std::string binFilename = "tree.bin";
+        file.Save_to_binary_file(tree, binFilename);
+        std::cout << "Konczenie programu..." << std::endl;
+    }
+    break;
+
+    case 11:
+    {
+        std::string binFilename = "tree.bin";
+        file.Load_from_binary_file(tree, binFilename);
+        std::cout << "Wczytano tree z pliku binarnego: " << binFilename << std::endl;
+    }
+    break;
+
+    }
+
+} while (option != 12);
+
 }
