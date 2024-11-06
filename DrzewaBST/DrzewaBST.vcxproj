@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="DrzewaBST.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Zarzadzanieplikami.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BST.h" />
+    <ClInclude Include="Zarzadzanieplikami.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="plik.txt" />
