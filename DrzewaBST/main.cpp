@@ -34,7 +34,7 @@ int main() {
     switch (option) {
     case 1:
         do {
-            std::cout << "Podaj wartosc nowego elementu drzewa BST: ";
+            std::cout << "Podaj wartosc nowego elementu drzewa BST: "; // dodawanie elementu
             std::cin >> value;
 
             tree.add(value);
