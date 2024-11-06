@@ -8,7 +8,7 @@ BST::~BST() {
 
 void BST::addNode(Node*& node, int value) {
      if (!node) { node = new Node(value); }
-     if (value < node->data) { addNode(node->left, value); }
+     else if (value < node->data) { addNode(node->left, value); }
      else { addNode(node->right, value); }
  }
 
@@ -48,12 +48,17 @@ void BST::remove(int value) {
 }
 
 void BST::deleteTree(Node* node) {
-
+    if (node) {
+        deleteTree(node->left);
+        deleteTree(node->right);
+        delete node;
+    }
     
 }
 
 void BST::clear() {
-
+    deleteTree(root);
+    root = nullptr;
 }
 
 bool BST::findPath() {
@@ -65,11 +70,16 @@ bool BST::searchPath() {
 }
 
 void BST::inorder(Node* node) {
-
+    if (node) {
+        inorder(node->left);
+        std::cout << node->data << " ";
+        inorder(node->right);
+    }
 }
 
 void BST::displayInorder() {
-    
+    inorder(root);
+    std::cout << std::endl;
 }
 
 void BST::preorder(Node* node) {

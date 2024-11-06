@@ -17,4 +17,10 @@ void displayMenu() {
 int main() {
     //By³a by³a by³a moim idea³em dok³adnie naprawde by³a ziomuœ
     displayMenu();
+    BST bst;
+    bst.add(5);
+    bst.add(9);
+    bst.add(2);
+    bst.add(3);
+    bst.displayInorder();
 }
