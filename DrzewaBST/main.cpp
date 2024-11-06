@@ -5,17 +5,17 @@
 void displayMenu() {
     std::cout << "\nBST Menu:\n";
     std::cout << "1. Dodaj element\n";
-    std::cout << "2. Usuñ element\n";
-    std::cout << "3. Wyœwietl drzewo preorder\n";
-    std::cout << "4. Wyœwietl drzewo inorder\n";
-    std::cout << "5. Wyœwietl drzewo postorder\n";
+    std::cout << "2. UsuÃ± element\n";
+    std::cout << "3. WyÅ“wietl drzewo preorder\n";
+    std::cout << "4. WyÅ“wietl drzewo inorder\n";
+    std::cout << "5. WyÅ“wietl drzewo postorder\n";
     std::cout << "6. Szukaj drogi do elementu\n";
-    std::cout << "7. Usuñ ca³e drzewo\n";
+    std::cout << "7. UsuÃ± caÂ³e drzewo\n";
     std::cout << "8. Zapisz drzewo do pliku\n";
     std::cout << "9. Wczytaj drzewo z pliku tekstowego\n";
     std::cout << "10. Zapisz drzewo z pliku binarnego\n";
     std::cout << "11. Wczytaj drzewo z pliku binarnego\n";
-    std::cout << "12. WyjdŸ\n";
+    std::cout << "12. WyjdÅ¸\n";
 }
 
 int main() {
@@ -34,7 +34,7 @@ int main() {
     switch (option) {
     case 1:
         do {
-            std::cout << "Podaj wartosc nowego elementu drzewa BST: "; // dodawanie elementu
+            std::cout << "Podaj wartosc nowego elementu drzewa BST: ";
             std::cin >> value;
 
             tree.add(value);
