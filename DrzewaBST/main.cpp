@@ -15,7 +15,7 @@ void displayMenu() {
 }
 
 int main() {
-    //By³a by³a by³a moim idea³em dok³adnie naprawde by³a ziomuœ
+    //By³a by³a by³a moim idea³em dok³adnie naprawde by³a ziomuœ naprawde bez kapki rel
     BST bst;
     bst.add(5);
     bst.add(9);
