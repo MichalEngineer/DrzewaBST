@@ -33,4 +33,6 @@ public:
     void displayPreorder();
     void displayPostorder();
     void saveToFile();
+
+    friend class Files;
 };

@@ -127,16 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BSTfiles.cpp" />
     <ClCompile Include="DrzewaBST.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Zarzadzanieplikami.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BST.h" />
-    <ClInclude Include="Zarzadzanieplikami.h" />
+    <ClInclude Include="BSTfiles.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="plik.txt" />
+    <Text Include="test.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
