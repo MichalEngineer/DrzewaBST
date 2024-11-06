@@ -3,10 +3,15 @@
 #include <fstream>
 #include "BST.h"
 
-class FileManager {
-public:
-    static void saveToTextFile(const BST& tree, const std::string& filename);
-    static void loadFromTextFile(BST& tree, const std::string& filename);
-    static void saveToBinaryFile(const BST& tree, const std::string& filename);
-    static void loadFromBinaryFile(BST& tree, const std::string& filename);
-};
+class Files {
+
+    public:
+       
+        static void Load_from_text_file(BST& tree, const std::string& filename, bool clearTree);
+       
+        static void Save_to_text_file(std::ofstream& file, Node* node);
+
+        static void Save_to_binary_file(BST& tree, const std::string& filename);
+
+        static void Load_from_binary_file(BST& tree, const std::string& filename);
+    };
