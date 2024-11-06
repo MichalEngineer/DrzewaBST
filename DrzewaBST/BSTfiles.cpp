@@ -22,3 +22,18 @@ void Files::Load_from_text_file(BST& tree, const std::string& filename, bool cle
     file.close(); 
 
 }
+
+void Files::Save_to_text_file(std::ofstream& file, Node* node) {
+
+    if (node == nullptr) { 
+
+        return;
+
+    }
+
+    file.write(reinterpret_cast<char*>(&node->data), sizeof(node->data)); 
+
+    Pliki_Zapisanie_wezla(file, node->left);   
+    Pliki_Zapisanie_wezla(file, node->right);
+
+}
